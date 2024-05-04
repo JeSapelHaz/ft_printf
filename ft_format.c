@@ -6,11 +6,11 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 20:54:57 by hbutt             #+#    #+#             */
-/*   Updated: 2024/05/03 17:16:42 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/05/04 18:12:05 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 /* cspdiuxX%
 	c : char
@@ -32,12 +32,12 @@ size_t	ft_format(va_list args, char c)
 	if (c == 's')
 		result = result + ft_putstr(va_arg(args, char *));
 	if (c == 'd' || c == 'i')
-		result = result + ft_nbr(va_arg(args, int));
+		result = result + ft_putnbr(va_arg(args, int));
 	if (c == '%')
 		result = result + ft_putchar('%');
 	if (c == 'p')
 		result = result + ft_putstr("0x") + ft_putnbr_base(va_arg(args,
-					unsigned), "0123456789abcdef");
+					unsigned long), "0123456789abcdef");
 	if (c == 'u')
 		result = result + ft_putnbr_base(va_arg(args, unsigned), "0123456789");
 	if (c == 'x')
@@ -57,7 +57,7 @@ size_t	ft_putnbr(long int nbr)
 	if (nbr < 0)
 	{
 		result = result + ft_putchar('-');
-		result = result * -1;
+		nbr = nbr * -1;
 	}
 	if (nbr > 9)
 	{
@@ -71,12 +71,13 @@ size_t	ft_putnbr(long int nbr)
 
 size_t	ft_putnbr_base(unsigned long int nbr, const char *base)
 {
-	size_t 	len_base;
-	size_t 	result;
+	size_t len_base;
+	size_t result;
 
 	len_base = ft_strlen(base);
+	result = 0;
 	if (nbr < len_base)
-		result = ft_putchar(base[nbr])
+		result = ft_putchar(base[nbr]);
 	if (nbr >= len_base)
 	{
 		result = result + ft_putnbr_base(nbr / len_base, base);
