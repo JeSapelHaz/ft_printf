@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 18:31:13 by hbutt             #+#    #+#             */
-/*   Updated: 2024/05/04 18:11:22 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/05/21 14:20:44 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_printf(const char *format, ...)
 {
-	size_t result;
-	va_list args;
-	size_t i;
+	size_t	result;
+	va_list	args;
+	size_t	i;
 
 	result = 0;
 	i = 0;

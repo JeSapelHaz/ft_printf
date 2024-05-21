@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 18:38:32 by hbutt             #+#    #+#             */
-/*   Updated: 2024/05/04 17:58:13 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/05/21 14:20:52 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ size_t	ft_strlen(const char *str)
 
 size_t	ft_putstr(const char *str)
 {
-	int len;
+	int	len;
 
 	if (!str)
 		return (write(1, "(null)", 6));

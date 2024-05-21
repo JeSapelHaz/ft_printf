@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 20:54:57 by hbutt             #+#    #+#             */
-/*   Updated: 2024/05/04 18:12:05 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/05/21 14:20:35 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ size_t	ft_putnbr(long int nbr)
 
 size_t	ft_putnbr_base(unsigned long int nbr, const char *base)
 {
-	size_t len_base;
-	size_t result;
+	size_t	len_base;
+	size_t	result;
 
 	len_base = ft_strlen(base);
 	result = 0;
