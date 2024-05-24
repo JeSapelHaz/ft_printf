@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 20:54:57 by hbutt             #+#    #+#             */
-/*   Updated: 2024/05/21 14:20:35 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/05/24 17:19:08 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,23 @@ size_t	ft_format(va_list args, char c)
 	result = 0;
 	if (c == 'c')
 		result = result + ft_putchar(va_arg(args, int));
-	if (c == 's')
+	else if (c == 's')
 		result = result + ft_putstr(va_arg(args, char *));
-	if (c == 'd' || c == 'i')
+	else if (c == 'd' || c == 'i')
 		result = result + ft_putnbr(va_arg(args, int));
-	if (c == '%')
-		result = result + ft_putchar('%');
-	if (c == 'p')
+	else if (c == 'p')
 		result = result + ft_putstr("0x") + ft_putnbr_base(va_arg(args,
 					unsigned long), "0123456789abcdef");
-	if (c == 'u')
+	else if (c == 'u')
 		result = result + ft_putnbr_base(va_arg(args, unsigned), "0123456789");
-	if (c == 'x')
+	else if (c == 'x')
 		result = result + ft_putnbr_base(va_arg(args, unsigned),
 				"0123456789abcdef");
-	if (c == 'X')
+	else if (c == 'X')
 		result = result + ft_putnbr_base(va_arg(args, unsigned),
 				"0123456789ABCDEF");
+	else
+		result = result + ft_putchar(c);
 	return (result);
 }
 

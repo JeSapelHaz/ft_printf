@@ -6,7 +6,7 @@
 #    By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/28 18:28:41 by hbutt             #+#    #+#              #
-#    Updated: 2024/05/11 19:30:33 by hbutt            ###   ########.fr        #
+#    Updated: 2024/05/24 17:30:45 by hbutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ $(OBJ) :
 	$(CC) $(CFLAGS) -c $(@:.o=.c) 
 
 clean : 
-	rm -f $(OBJSALL)
+	rm -f $(OBJ)
 
 fclean : clean;
 	rm -f $(NAME)
